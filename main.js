@@ -1,8 +1,4 @@
-'use strict'
-
-// please, modify this Path
 const FilePath = "/opt/Multiverse-NodeWebHook/Deploy.sh";
-
 const express = require('express'); 
 const http = require('http');
 const app = express();
@@ -13,12 +9,9 @@ app.post('/deploy/', function (req, res)
     let spawn = require('child_process').spawn;
     let deploy = spawn('sh', [ FilePath ]);
 
-    deploy.stdout.on('data', function (data) 
-    { console.log(''+data); });
-
     deploy.on('close', function (code) 
     { console.log('Child process exited with code ' + code); });
-    res.status(200).json({message: 'Github Hook received!'});
+    res.status(200).json({message: 'Git Hook received!'});
 });
 
 http.createServer(app).listen(app.get('port'), function()
