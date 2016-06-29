@@ -2,13 +2,13 @@
 Description=Node Web Hook
 
 [Service]
-ExecStart=/opt/NodeWebHook/main.js
+ExecStart=/opt/Multiverse-NodeWebHook/main.js
 Restart=always
 User=root
 Group=root
 Environment=PATH=/usr/bin:/usr/local/bin
 Environment=NODE_ENV=production
-WorkingDirectory=/opt/NodeWebHook/
+WorkingDirectory=/opt/Multiverse-NodeWebHook/
 
 [Install]
 WantedBy=multi-user.target
