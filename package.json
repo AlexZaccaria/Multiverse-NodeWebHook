@@ -1,0 +1,16 @@
+{
+  "name": "NodeWebHook",
+  "version": "1.0.0",
+  "keywords": [
+    "util",
+    "functional",
+    "server",
+    "client",
+    "browser"
+  ],
+  "author": "Sonique",
+  "contributors": [],
+  "dependencies": {
+    "gith": "^1.0.4"
+  }
+}
