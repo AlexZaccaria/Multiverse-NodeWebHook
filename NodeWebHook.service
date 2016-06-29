@@ -2,7 +2,7 @@
 Description=Node Web Hook
 
 [Service]
-ExecStart=/opt/Multiverse-NodeWebHook/main.js
+ExecStart=/usr/bin/npm start
 Restart=always
 User=root
 Group=root

@@ -1,7 +1,7 @@
 'use strict'
 
 // please, modify this Path
-const FilePath = "";
+const FilePath = "/opt/Multiverse-NodeWebHook/Deploy.sh";
 
 const express = require('express'); 
 const http = require('http');
