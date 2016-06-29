@@ -1,5 +1,5 @@
 [Unit]
-Description=Node Web Hook
+Description=[NodeJS] Web Hook
 
 [Service]
 ExecStart=/usr/bin/sudo /usr/bin/npm start
