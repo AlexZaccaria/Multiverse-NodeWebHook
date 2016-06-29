@@ -12,7 +12,7 @@
   "contributors": [],
   "scripts": {
       "start": "npm install && node main.js"
-  }
+  },
   "dependencies": {
     "gith": "^1.0.4"
   }
