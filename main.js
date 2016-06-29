@@ -1,20 +1,25 @@
-// please, modify those three pars
-const Repository = "";
-const Branch = "";
+'use strict'
+
+// please, modify this Path
 const FilePath = "";
-// please, modify those three pars
 
-const gith = require('gith').create(9000);
-const execFile = require('child_process').execFile;
+const express = require('express'); 
+const http = require('http');
+const app = express();
 
-gith
-({
-    repo: Repository
-}).on( 'all', function( payload ) 
-{
-    if( payload.branch === Branch)
-    {
-        execFile(FilePath, function(error, stdout, stderr) 
-        { console.log( 'Deploying..' ); });
-    }
+app.set('port', 9000);
+app.post('/deploy/', function (req, res) 
+{  
+    let spawn = require('child_process').spawn;
+    let deploy = spawn('sh', [ FilePath ]);
+
+    deploy.stdout.on('data', function (data) 
+    { console.log(''+data); });
+
+    deploy.on('close', function (code) 
+    { console.log('Child process exited with code ' + code); });
+    res.json(200, {message: 'Github Hook received!'})
 });
+
+http.createServer(app).listen(app.get('port'), function()
+{ console.log('Express server listening on port ' + app.get('port')); });

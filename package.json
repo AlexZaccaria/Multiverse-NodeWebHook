@@ -11,9 +11,9 @@
   "author": "Sonique",
   "contributors": [],
   "scripts": {
-      "start": "npm install && node main.js"
+    "start": "npm install && node main.js"
   },
   "dependencies": {
-    "gith": "^1.0.4"
+    "express": "^4.14.0"
   }
 }
