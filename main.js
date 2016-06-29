@@ -18,7 +18,7 @@ app.post('/deploy/', function (req, res)
 
     deploy.on('close', function (code) 
     { console.log('Child process exited with code ' + code); });
-    res.json(200, {message: 'Github Hook received!'})
+    res.status(200).json({message: 'Github Hook received!'});
 });
 
 http.createServer(app).listen(app.get('port'), function()
